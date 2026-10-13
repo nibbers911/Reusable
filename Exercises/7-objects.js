@@ -7,6 +7,17 @@
 - Try to assign other object to both identifiers.
 - Explain script behaviour. */
 
-const fn = null;
+const fn = () => {
+  const obj1 = { name: 'Viacheslav' };
+  let obj2 = { name: 'Viacheslav' };
+
+  obj1.name = 'Trubnikov';
+  obj2.name = 'Trubnikov';
+
+  // const фіксує посилання, а не вміст: поля міняти можна
+  obj2 = { name: 'Dmytro' }; // let дозволяє змінити посилання
+
+  return { obj1, obj2 };
+};
 
 module.exports = { fn };
